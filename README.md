@@ -1,4 +1,4 @@
-# Ecnn mineral
+# Ecnn mineral 
 
 #### Article: <small><strong>Group- and Gauge-Equivariant Convolutional Networks for Binary Segmentation of FeM Mineral Images</strong> <a href=""><img src="https://cdn.simpleicons.org/doi/2dd4bf" alt="DOI" height="14" align="absmiddle"></a> <a href=""><img src="https://cdn.simpleicons.org/zenodo/2dd4bf" alt="Zenodo" height="14" align="absmiddle"></a> <a href="https://drive.google.com/drive/folders/1F9e0RKuGpopX26E9n4Q9zbR6tYKMayiQ?usp=drive_link"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" height="14" align="absmiddle"></a></small>
 
