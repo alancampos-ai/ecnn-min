@@ -1,33 +1,30 @@
 # Ecnn mineral
 
-novo link do drive:  https://drive.google.com/drive/folders/1F9e0RKuGpopX26E9n4Q9zbR6tYKMayiQ?usp=drive_link
+#### Article: <small><strong>Group- and Gauge-Equivariant Convolutional Networks for Binary Segmentation of FeM Mineral Images</strong> <a href=""><img src="https://cdn.simpleicons.org/doi/2dd4bf" alt="DOI" height="14" align="absmiddle"></a> <a href=""><img src="https://cdn.simpleicons.org/zenodo/2dd4bf" alt="Zenodo" height="14" align="absmiddle"></a> <a href="https://drive.google.com/drive/folders/1F9e0RKuGpopX26E9n4Q9zbR6tYKMayiQ?usp=drive_link"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" height="14" align="absmiddle"></a></small>
 
-#### Article:   <small><strong>Equivariant Switching Gain-Graph Descriptor for Mineral Images</strong>  <a href=""><img src="https://cdn.simpleicons.org/doi/2dd4bf" alt="DOI" height="14" align="absmiddle"></a>  <a href=""><img src="https://cdn.simpleicons.org/zenodo/2dd4bf" alt="Zenodo" height="14" align="absmiddle"></a>  <a href="https://drive.google.com/drive/folders/1PFo1AklBpse2Tg4RbjPkNxztqyD_DMNY?usp=sharing"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" height="14" align="absmiddle"></a></small>
+We evaluate group- and gauge-equivariant convolutional networks for binary segmentation and predictive uncertainty reduction in reflected-light mineral images. The gauge-equivariant convolutional network (GECN) combines a typed six-channel input with image-derived local frames and confidence-weighted transport. The analysis characterizes local-frame sensitivity, derives perturbation bounds, and establishes covariance of confidence-weighted transport. Evaluation uses 81 image–mask pairs, five image-wise folds, five optimization seeds, and 25 parameter-matched networks. Within the controlled comparison under direct calibrated inference, GECN increases F1 by 5.44% relative to Plain (PL) and reduces negative log-likelihood (NLL), Brier score, and expected calibration error (ECE) by 29.52%, 27.50%, and 54.00%, respectively. Paired F1 and NLL contrasts against PL are significant under two-sided Wilcoxon tests ($p<10^{-4}$). Runtime, peak GPU memory, floating-point operation counts, and measured energy consumption are also reported.
 
-We introduce a switching-invariant gain-graph (SIGG) descriptor for paired reflected-light microscopy images and binary mineral masks. SIGG combines canonical multiscale local relations with $D_4$-equivariant component geometry and appearance. Switching reduces local gain profiles from 1,092 to 84 entries and halves padded storage from 36,864 to 18,432. Evaluation uses 81 fields from one iron-ore specimen, 20 query seeds, five source-image folds, and 11,340 transformed partial-view queries per method. Among eleven representations, SIGG achieves mean reciprocal rank (MRR) 0.9874, Recall@1 0.9846, and Recall@5 0.9895. MRR without switching is 0.9877 (Holm-adjusted $p=0.625$). Pooled invariant SIGG attains MRR 0.1111 ($p_{\rm Holm}=5.36\times10^{-14}$). Mean relative equivariance error is $9.12\times10^{-17}$. Paired source-image inference uses Wilcoxon tests, effect sizes, and bootstrap confidence intervals. Sensitivity selection uses outer-training folds. Runtime, memory, energy, and neural floating-point operation counts are reported.
+#### Dependencies (evaluation and Docker environments)
 
-#### Dependencies (evaluation environment)
+The reference Python version is 3.12.7. External-comparator runs used Python 3.10.19, PyTorch 2.2.0+cu121, and CUDA 12.1. The Docker image uses `pytorch/pytorch:2.4.1-cuda12.4-cudnn9-runtime` with the following dependencies:
 
-* Python 3.10.19
 * NumPy 1.26.4
-* SciPy 1.12.0
-* pandas 2.2.3
-* scikit-image 0.25.2
-* scikit-learn 1.7.2
-* PyTorch 2.2.0+cu121
-* torchvision 0.17.0
-* Matplotlib 3.10.8
-* Pillow 11.3.0
-* PyYAML 6.0.3
-* psutil 7.0.0
-* joblib 1.5.3
-* pytest 9.1.1
+* SciPy 1.13.1
+* Matplotlib 3.9.2
+* Pillow 10.4.0
+* NiBabel 5.3.2
+* DIPY 1.12.1
+* escnn 1.0.11
+* PyTorch Geometric 2.6.1
+* opt-einsum 3.4.0
+* trimesh 4.5.3
+* tqdm 4.67.1
 
 #### Installation
 
 ```bash
-docker compose -f docker/compose.yaml build
-docker compose -f docker/compose.yaml up --abort-on-container-exit
+docker build --pull -f docker/Dockerfile -t ecnn-min:latest .
+docker run --rm ecnn-min:latest
 ```
 
 #### License (MIT)
